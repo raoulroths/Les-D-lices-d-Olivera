@@ -1,5 +1,5 @@
 export const PHONE_DISPLAY = "07 10 05 69 94";
-export const PHONE_TEL = "0710056994";
+export const PHONE_TEL = "2250710056994";
 export const STORE_NAME = "Les Délices de Olivera";
 export const STORE_CITY = "Daloa, Côte d’Ivoire";
 export const PAYMENT_METHODS = [
