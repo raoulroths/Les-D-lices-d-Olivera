@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  --color-plum: #2c0b4a;
+  --color-plum-deep: #160526;
+  --color-magenta: #e91e8c;
+  --color-magenta-soft: #ff4fb0;
+  --color-cream: #fbf6ef;
+  --color-ivory: #fffaf4;
+  --color-gold: #d4a054;
+  --color-chocolate: #4a2c14;
+  --color-cocoa: #7a4a28;
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-cormorant);
+  --font-script: var(--font-script);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-plum);
+}
+
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 600;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+  font-weight: 400;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--color-magenta);
+  color: white;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 12px 24px rgba(233, 30, 140, 0.28);
+}
+
+.btn-primary:hover {
+  background: #c41074;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  transform: none;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--color-cream) 40%, transparent);
+  color: var(--color-cream);
+  padding: 0.85rem 1.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.btn-ghost:hover {
+  background: white;
+  color: var(--color-plum);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--color-gold);
+  color: var(--color-plum-deep);
+  padding: 0.85rem 1.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.btn-gold:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.field {
+  width: 100%;
+  border-radius: 0.9rem;
+  border: 1px solid color-mix(in oklab, var(--color-plum) 15%, transparent);
+  background: var(--color-ivory);
+  padding: 0.7rem 0.9rem;
+  color: var(--color-plum);
+  outline: none;
+}
+
+.field:focus {
+  border-color: var(--color-magenta);
+  box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.15);
+}
+
+.label {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-cocoa);
+}
+
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.8s ease both;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.22s;
+}
+.delay-3 {
+  animation-delay: 0.34s;
+}
+
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+}
