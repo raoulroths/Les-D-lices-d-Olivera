@@ -52,7 +52,7 @@ export function WhatsappOrderButton({
   const message = lines.join("\n");
   // WhatsApp international: "+225" + le numéro (sans le 0 au début du numéro Ivoirien).
   // Le numéro d'Olivera est 07 10 05 69 94 → 225 0710056994.
-  const whatsappNumber = `225${PHONE_TEL}`;
+  const whatsappNumber = PHONE_TEL;
   const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   return (
